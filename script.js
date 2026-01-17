@@ -322,7 +322,20 @@ function selectOption(index) {
 
 function nextQuestion() {
     if (answers[currentQuestion] === undefined) {
-        alert('Bitte wähle eine Antwort aus.');
+        // Show a styled message instead of alert
+        const optionsElement = document.getElementById('quiz-options');
+        const existingMessage = document.querySelector('.quiz-message');
+        if (!existingMessage) {
+            const message = document.createElement('div');
+            message.className = 'quiz-message';
+            message.textContent = 'Bitte wähle eine Antwort aus.';
+            message.style.color = 'var(--accent-color)';
+            message.style.textAlign = 'center';
+            message.style.marginTop = '1rem';
+            message.style.fontWeight = '600';
+            optionsElement.parentNode.insertBefore(message, optionsElement.nextSibling);
+            setTimeout(() => message.remove(), 3000);
+        }
         return;
     }
     

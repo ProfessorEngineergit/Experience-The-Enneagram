@@ -18,6 +18,7 @@
     --shadow-medium: 0 4px 20px rgba(0, 0, 0, 0.1);
     --shadow-heavy: 0 8px 30px rgba(0, 0, 0, 0.15);
     --transition: all 0.3s ease;
+    --font-monospace: 'Courier New', Courier, monospace;
 }
 
 html {
@@ -737,7 +738,7 @@ body {
 .movement-explanation li {
     padding: 0.5rem 0;
     color: var(--text-dark);
-    font-family: monospace;
+    font-family: var(--font-monospace);
     font-size: 1.1rem;
 }
 
