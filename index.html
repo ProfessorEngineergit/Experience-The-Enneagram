@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience The Enneagram - Eine interaktive Reise durch die 9 Persönlichkeitstypen</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Experience The Enneagram</div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">Über das Enneagram</a></li>
+                <li><a href="#diagram" class="nav-link">Interaktives Diagramm</a></li>
+                <li><a href="#types" class="nav-link">Die 9 Typen</a></li>
+                <li><a href="#quiz" class="nav-link">Quiz</a></li>
+                <li><a href="#journey" class="nav-link">Deine Reise</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Experience The Enneagram</h1>
+            <p class="hero-subtitle">Entdecke deine wahre Persönlichkeit durch eine tiefgreifende Reise der Selbsterkenntnis</p>
+            <button class="cta-button" onclick="smoothScroll('#about')">Beginne deine Reise</button>
+        </div>
+        <div class="hero-animation">
+            <div class="enneagram-symbol">
+                <svg viewBox="0 0 200 200" class="enneagram-svg">
+                    <circle cx="100" cy="100" r="80" class="outer-circle"/>
+                    <polygon points="100,20 174,76 154,162 46,162 26,76" class="inner-pentagon"/>
+                    <line x1="100" y1="20" x2="154" y2="162" class="connecting-line"/>
+                    <line x1="174" y1="76" x2="46" y2="162" class="connecting-line"/>
+                    <line x1="154" y1="162" x2="26" y2="76" class="connecting-line"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">Was ist das Enneagram?</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="intro-text">Das Enneagram ist ein uraltes System der Persönlichkeitstypologie, das neun grundlegende Persönlichkeitstypen beschreibt. Jeder Typ hat seine eigenen Motivationen, Ängste, und Verhaltensmuster.</p>
+                    
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">🎭</div>
+                            <h3>9 Persönlichkeitstypen</h3>
+                            <p>Jeder mit einzigartigen Eigenschaften, Stärken und Herausforderungen</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🌟</div>
+                            <h3>Selbsterkenntnis</h3>
+                            <p>Verstehe deine tiefsten Motivationen und unbewussten Muster</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🔄</div>
+                            <h3>Wachstum & Transformation</h3>
+                            <p>Entdecke Wege zur persönlichen Entwicklung und inneren Freiheit</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">💫</div>
+                            <h3>Beziehungsverständnis</h3>
+                            <p>Lerne andere Menschen besser zu verstehen und empathischer zu kommunizieren</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Diagram Section -->
+    <section id="diagram" class="diagram-section">
+        <div class="container">
+            <h2 class="section-title">Das Interaktive Enneagram-Diagramm</h2>
+            <p class="section-description">Klicke auf einen der neun Punkte, um mehr über jeden Typ zu erfahren</p>
+            
+            <div class="diagram-container">
+                <svg viewBox="0 0 400 400" class="interactive-diagram">
+                    <!-- Outer circle -->
+                    <circle cx="200" cy="200" r="160" class="diagram-circle"/>
+                    
+                    <!-- Connecting lines -->
+                    <line x1="200" y1="40" x2="308" y2="324" class="diagram-line"/>
+                    <line x1="348" y1="152" x2="92" y2="324" class="diagram-line"/>
+                    <line x1="308" y1="324" x2="52" y2="152" class="diagram-line"/>
+                    
+                    <!-- Type Points -->
+                    <g class="type-point" data-type="9" onclick="showTypeInfo(9)">
+                        <circle cx="200" cy="40" r="20" class="point point-9"/>
+                        <text x="200" y="48" class="point-label">9</text>
+                    </g>
+                    <g class="type-point" data-type="1" onclick="showTypeInfo(1)">
+                        <circle cx="315" cy="95" r="20" class="point point-1"/>
+                        <text x="315" y="103" class="point-label">1</text>
+                    </g>
+                    <g class="type-point" data-type="2" onclick="showTypeInfo(2)">
+                        <circle cx="360" cy="200" r="20" class="point point-2"/>
+                        <text x="360" y="208" class="point-label">2</text>
+                    </g>
+                    <g class="type-point" data-type="3" onclick="showTypeInfo(3)">
+                        <circle cx="315" cy="305" r="20" class="point point-3"/>
+                        <text x="315" y="313" class="point-label">3</text>
+                    </g>
+                    <g class="type-point" data-type="4" onclick="showTypeInfo(4)">
+                        <circle cx="200" cy="360" r="20" class="point point-4"/>
+                        <text x="200" y="368" class="point-label">4</text>
+                    </g>
+                    <g class="type-point" data-type="5" onclick="showTypeInfo(5)">
+                        <circle cx="85" cy="305" r="20" class="point point-5"/>
+                        <text x="85" y="313" class="point-label">5</text>
+                    </g>
+                    <g class="type-point" data-type="6" onclick="showTypeInfo(6)">
+                        <circle cx="40" cy="200" r="20" class="point point-6"/>
+                        <text x="40" y="208" class="point-label">6</text>
+                    </g>
+                    <g class="type-point" data-type="7" onclick="showTypeInfo(7)">
+                        <circle cx="85" cy="95" r="20" class="point point-7"/>
+                        <text x="85" y="103" class="point-label">7</text>
+                    </g>
+                    <g class="type-point" data-type="8" onclick="showTypeInfo(8)">
+                        <circle cx="145" cy="55" r="20" class="point point-8"/>
+                        <text x="145" y="63" class="point-label">8</text>
+                    </g>
+                </svg>
+                
+                <div id="type-info-panel" class="type-info-panel hidden">
+                    <button class="close-btn" onclick="closeTypeInfo()">×</button>
+                    <div id="type-info-content"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Types Section -->
+    <section id="types" class="types-section">
+        <div class="container">
+            <h2 class="section-title">Die 9 Enneagram-Typen im Detail</h2>
+            <p class="section-description">Eine umfassende Erkundung jedes Persönlichkeitstyps</p>
+            
+            <!-- Type 1 -->
+            <div class="type-detail" id="type-1">
+                <div class="type-header">
+                    <h3>Typ 1: Der Reformer</h3>
+                    <span class="type-badge">Der Perfektionist</span>
+                </div>
+                <div class="type-content">
+                    <div class="type-main">
+                        <h4>Kernmerkmale</h4>
+                        <p>Menschen vom Typ 1 streben nach Perfektion und Integrität. Sie haben ein starkes inneres Gespür für richtig und falsch und möchten die Welt zu einem besseren Ort machen. Sie sind gewissenhaft, verantwortungsbewusst und haben hohe ethische Standards.</p>
+                        
+                        <h4>Grundmotivation</h4>
+                        <p>Typ 1 möchte integer, korrekt und moralisch gut sein. Sie streben danach, ihre hohen inneren Standards zu erfüllen und Fehler zu vermeiden.</p>
+                        
+                        <h4>Grundangst</h4>
+                        <p>Die tiefste Angst von Typ 1 ist es, korrupt, böse oder fehlerhaft zu sein. Sie fürchten, ihre Integrität zu verlieren oder für unmoralisch gehalten zu werden.</p>
+                    </div>
+                    <div class="type-sidebar">
+                        <div class="info-box">
+                            <h5>Stärken</h5>
+                            <ul>
+                                <li>Hohes Verantwortungsgefühl</li>
+                                <li>Starke ethische Prinzipien</li>
+                                <li>Detailorientiert und sorgfältig</li>
+                                <li>Verbessern und optimieren</li>
+                            </ul>
+                        </div>
+                        <div class="info-box">
+                            <h5>Herausforderungen</h5>
+                            <ul>
+                                <li>Übermäßige Selbstkritik</li>
+                                <li>Rigidität und Perfektionismus</li>
+                                <li>Schwierigkeiten, Fehler zu akzeptieren</li>
+                                <li>Unterdrückte Wut</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Type 2 -->
+            <div class="type-detail" id="type-2">
+                <div class="type-header">
+                    <h3>Typ 2: Der Helfer</h3>
+                    <span class="type-badge">Der Geber</span>
+                </div>
+                <div class="type-content">
+                    <div class="type-main">
+                        <h4>Kernmerkmale</h4>
+                        <p>Typ 2 ist warm, fürsorglich und großzügig. Sie sind von Natur aus empathisch und haben ein starkes Bedürfnis, anderen zu helfen und für sie da zu sein. Sie sind beziehungsorientiert und legen großen Wert auf emotionale Verbindungen.</p>
+                        
+                        <h4>Grundmotivation</h4>
+                        <p>Menschen vom Typ 2 möchten geliebt und gebraucht werden. Sie streben danach, für andere unverzichtbar zu sein und Anerkennung für ihre Hilfsbereitschaft zu erhalten.</p>
+                        
+                        <h4>Grundangst</h4>
+                        <p>Die tiefste Angst von Typ 2 ist es, ungeliebt und unwürdig der Liebe zu sein. Sie fürchten, nicht gebraucht zu werden und allein zu sein.</p>
+                    </div>
+                    <div class="type-sidebar">
+                        <div class="info-box">
+                            <h5>Stärken</h5>
+                            <ul>
+                                <li>Tiefe Empathie und Fürsorge</li>
+                                <li>Großzügigkeit und Selbstlosigkeit</li>
+                                <li>Starke Beziehungsfähigkeit</li>
+                                <li>Ermutigen und unterstützen andere</li>
+                            </ul>
+                        </div>
+                        <div class="info-box">
+                            <h5>Herausforderungen</h5>
+                            <ul>
+                                <li>Vernachlässigung eigener Bedürfnisse</li>
+                                <li>Manipulative Hilfe mit Erwartungen</li>
+                                <li>Schwierigkeiten, "Nein" zu sagen</li>
+                                <li>Abhängigkeit von Anerkennung</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Type 3 -->
+            <div class="type-detail" id="type-3">
+                <div class="type-header">
+                    <h3>Typ 3: Der Erfolgsmensch</h3>
+                    <span class="type-badge">Der Leistungsträger</span>
+                </div>
+                <div class="type-content">
+                    <div class="type-main">
+                        <h4>Kernmerkmale</h4>
+                        <p>Typ 3 ist ehrgeizig, zielorientiert und energiegeladen. Sie sind Meister der Anpassung und präsentieren sich so, wie es ihrer Meinung nach zum Erfolg führt. Sie sind produktiv, effizient und wettbewerbsorientiert.</p>
+                        
+                        <h4>Grundmotivation</h4>
+                        <p>Menschen vom Typ 3 möchten wertvoll, bewundert und erfolgreich sein. Sie streben nach Anerkennung und Bestätigung durch ihre Leistungen und ihren Status.</p>
+                        
+                        <h4>Grundangst</h4>
+                        <p>Die tiefste Angst von Typ 3 ist es, wertlos und ohne inhärenten Wert zu sein. Sie fürchten das Scheitern und die Ablehnung.</p>
+                    </div>
+                    <div class="type-sidebar">
+                        <div class="info-box">
+                            <h5>Stärken</h5>
+                            <ul>
+                                <li>Hochmotiviert und zielstrebig</li>
+                                <li>Anpassungsfähig und flexibel</li>
+                                <li>Inspirierend und charismatisch</li>
+                                <li>Effizient und produktiv</li>
+                            </ul>
+                        </div>
+                        <div class="info-box">
+                            <h5>Herausforderungen</h5>
+                            <ul>
+                                <li>Identifikation mit der Rolle statt dem wahren Selbst</li>
+                                <li>Workaholic-Tendenzen</li>
+                                <li>Schwierigkeiten mit Authentizität</li>
+                                <li>Oberflächliche Beziehungen</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Type 4 -->
+            <div class="type-detail" id="type-4">
+                <div class="type-header">
+                    <h3>Typ 4: Der Individualist</h3>
+                    <span class="type-badge">Der Romantiker</span>
+                </div>
+                <div class="type-content">
+                    <div class="type-main">
+                        <h4>Kernmerkmale</h4>
+                        <p>Typ 4 ist kreativ, sensibel und introspektiv. Sie haben eine tiefe emotionale Reichweite und streben nach Authentizität und Selbstausdruck. Sie sind künstlerisch begabt und haben ein ausgeprägtes Gespür für Schönheit und Bedeutung.</p>
+                        
+                        <h4>Grundmotivation</h4>
+                        <p>Menschen vom Typ 4 möchten sich selbst finden, ihre Identität kreieren und einzigartig sein. Sie streben danach, ihre tiefsten Gefühle auszudrücken und verstanden zu werden.</p>
+                        
+                        <h4>Grundangst</h4>
+                        <p>Die tiefste Angst von Typ 4 ist es, keine persönliche Identität oder Bedeutung zu haben. Sie fürchten, gewöhnlich zu sein und ihre wahre Essenz nicht zu finden.</p>
+                    </div>
+                    <div class="type-sidebar">
+                        <div class="info-box">
+                            <h5>Stärken</h5>
+                            <ul>
+                                <li>Tiefe emotionale Intelligenz</li>
+                                <li>Kreativität und Originalität</li>
+                                <li>Authentizität und Ehrlichkeit</li>
+                                <li>Empathie für Leidende</li>
+                            </ul>
+                        </div>
+                        <div class="info-box">
+                            <h5>Herausforderungen</h5>
+                            <ul>
+                                <li>Melancholie und Depression</li>
+                                <li>Neid auf andere</li>
+                                <li>Selbstabsorption</li>
+                                <li>Intensität in Beziehungen</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Type 5 -->
+            <div class="type-detail" id="type-5">
+                <div class="type-header">
+                    <h3>Typ 5: Der Forscher</h3>
+                    <span class="type-badge">Der Beobachter</span>
+                </div>
+                <div class="type-content">
+                    <div class="type-main">
+                        <h4>Kernmerkmale</h4>
+                        <p>Typ 5 ist analytisch, neugierig und unabhängig. Sie sind tiefe Denker, die Wissen und Verständnis sammeln. Sie sind zurückhaltend, objektiv und bevorzugen es, Situationen aus der Distanz zu beobachten.</p>
+                        
+                        <h4>Grundmotivation</h4>
+                        <p>Menschen vom Typ 5 möchten kompetent und sachkundig sein. Sie streben danach, die Welt zu verstehen und durch Wissen unabhängig zu sein.</p>
+                        
+                        <h4>Grundangst</h4>
+                        <p>Die tiefste Angst von Typ 5 ist es, inkompetent, hilflos oder von den Ressourcen anderer abhängig zu sein. Sie fürchten, von der Welt überwältigt zu werden.</p>
+                    </div>
+                    <div class="type-sidebar">
+                        <div class="info-box">
+                            <h5>Stärken</h5>
+                            <ul>
+                                <li>Tiefgründiges Denken</li>
+                                <li>Objektivität und Klarheit</li>
+                                <li>Unabhängigkeit</li>
+                                <li>Innovatives Problemlösen</li>
+                            </ul>
+                        </div>
+                        <div class="info-box">
+                            <h5>Herausforderungen</h5>
+                            <ul>
+                                <li>Emotionale Distanzierung</li>
+                                <li>Isolation und Rückzug</li>
+                                <li>Geiz mit Zeit und Energie</li>
+                                <li>Übermäßiger Intellektualismus</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Type 6 -->
+            <div class="type-detail" id="type-6">
+                <div class="type-header">
+                    <h3>Typ 6: Der Loyalist</h3>
+                    <span class="type-badge">Der Skeptiker</span>
+                </div>
+                <div class="type-content">
+                    <div class="type-main">
+                        <h4>Kernmerkmale</h4>
+                        <p>Typ 6 ist verantwortungsbewusst, vertrauenswürdig und loyal. Sie sind vorsichtig und denken voraus, um potenzielle Probleme zu vermeiden. Sie schätzen Sicherheit, Stabilität und Zugehörigkeit zu einer Gruppe.</p>
+                        
+                        <h4>Grundmotivation</h4>
+                        <p>Menschen vom Typ 6 möchten Sicherheit und Unterstützung haben. Sie streben nach Gewissheit und suchen nach verlässlichen Strukturen und Beziehungen.</p>
+                        
+                        <h4>Grundangst</h4>
+                        <p>Die tiefste Angst von Typ 6 ist es, ohne Unterstützung und Orientierung zu sein. Sie fürchten Unsicherheit, Verrat und Gefahren.</p>
+                    </div>
+                    <div class="type-sidebar">
+                        <div class="info-box">
+                            <h5>Stärken</h5>
+                            <ul>
+                                <li>Treue und Verlässlichkeit</li>
+                                <li>Verantwortungsbewusstsein</li>
+                                <li>Vorausschauendes Denken</li>
+                                <li>Teamorientierung</li>
+                            </ul>
+                        </div>
+                        <div class="info-box">
+                            <h5>Herausforderungen</h5>
+                            <ul>
+                                <li>Chronische Angst und Sorge</li>
+                                <li>Misstrauen und Skepsis</li>
+                                <li>Schwierigkeiten mit Entscheidungen</li>
+                                <li>Autoritätskonflikte</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Type 7 -->
+            <div class="type-detail" id="type-7">
+                <div class="type-header">
+                    <h3>Typ 7: Der Enthusiast</h3>
+                    <span class="type-badge">Der Optimist</span>
+                </div>
+                <div class="type-content">
+                    <div class="type-main">
+                        <h4>Kernmerkmale</h4>
+                        <p>Typ 7 ist optimistisch, vielseitig und spontan. Sie sind lebenslustig, abenteuerlustig und haben einen unersättlichen Appetit auf neue Erfahrungen. Sie sind kreativ, flexibel und lieben es, Pläne zu schmieden.</p>
+                        
+                        <h4>Grundmotivation</h4>
+                        <p>Menschen vom Typ 7 möchten glücklich, zufrieden und frei sein. Sie streben danach, Schmerz und Langeweile zu vermeiden und ihr Leben mit aufregenden Erlebnissen zu füllen.</p>
+                        
+                        <h4>Grundangst</h4>
+                        <p>Die tiefste Angst von Typ 7 ist es, in Schmerz, Mangel oder Langeweile gefangen zu sein. Sie fürchten, depriviert oder emotional eingeschränkt zu werden.</p>
+                    </div>
+                    <div class="type-sidebar">
+                        <div class="info-box">
+                            <h5>Stärken</h5>
+                            <ul>
+                                <li>Optimismus und Positivität</li>
+                                <li>Kreativität und Ideenreichtum</li>
+                                <li>Flexibilität und Anpassungsfähigkeit</li>
+                                <li>Begeisterung, die andere inspiriert</li>
+                            </ul>
+                        </div>
+                        <div class="info-box">
+                            <h5>Herausforderungen</h5>
+                            <ul>
+                                <li>Impulsivität und Ungeduld</li>
+                                <li>Schwierigkeiten mit Commitment</li>
+                                <li>Vermeidung von Schmerz und Tiefe</li>
+                                <li>Oberflächlichkeit</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Type 8 -->
+            <div class="type-detail" id="type-8">
+                <div class="type-header">
+                    <h3>Typ 8: Der Herausforderer</h3>
+                    <span class="type-badge">Der Beschützer</span>
+                </div>
+                <div class="type-content">
+                    <div class="type-main">
+                        <h4>Kernmerkmale</h4>
+                        <p>Typ 8 ist selbstbewusst, stark und durchsetzungsfähig. Sie sind geborene Anführer, die Kontrolle und Macht schätzen. Sie sind direkt, ehrlich und beschützen die Schwachen.</p>
+                        
+                        <h4>Grundmotivation</h4>
+                        <p>Menschen vom Typ 8 möchten unabhängig, stark und Herr über ihr eigenes Leben sein. Sie streben danach, nicht verletzlich oder von anderen kontrolliert zu werden.</p>
+                        
+                        <h4>Grundangst</h4>
+                        <p>Die tiefste Angst von Typ 8 ist es, verletzt, kontrolliert oder von anderen verletzt zu werden. Sie fürchten Schwäche und Abhängigkeit.</p>
+                    </div>
+                    <div class="type-sidebar">
+                        <div class="info-box">
+                            <h5>Stärken</h5>
+                            <ul>
+                                <li>Führungsstärke und Entschlossenheit</li>
+                                <li>Mut und Selbstvertrauen</li>
+                                <li>Beschützerinstinkt</li>
+                                <li>Direktheit und Ehrlichkeit</li>
+                            </ul>
+                        </div>
+                        <div class="info-box">
+                            <h5>Herausforderungen</h5>
+                            <ul>
+                                <li>Dominanz und Kontrolle</li>
+                                <li>Schwierigkeiten mit Verletzlichkeit</li>
+                                <li>Konfrontatives Verhalten</li>
+                                <li>Übermäßige Intensität</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Type 9 -->
+            <div class="type-detail" id="type-9">
+                <div class="type-header">
+                    <h3>Typ 9: Der Friedliebende</h3>
+                    <span class="type-badge">Der Vermittler</span>
+                </div>
+                <div class="type-content">
+                    <div class="type-main">
+                        <h4>Kernmerkmale</h4>
+                        <p>Typ 9 ist friedliebend, harmoniesuchend und verständnisvoll. Sie sind entspannt, geduldig und akzeptierend. Sie haben die Fähigkeit, verschiedene Perspektiven zu sehen und Menschen zusammenzubringen.</p>
+                        
+                        <h4>Grundmotivation</h4>
+                        <p>Menschen vom Typ 9 möchten inneren und äußeren Frieden haben. Sie streben danach, Harmonie zu bewahren und Konflikte zu vermeiden.</p>
+                        
+                        <h4>Grundangst</h4>
+                        <p>Die tiefste Angst von Typ 9 ist es, getrennt, verloren oder in Konflikt zu sein. Sie fürchten, ihre innere Stabilität und Verbundenheit zu verlieren.</p>
+                    </div>
+                    <div class="type-sidebar">
+                        <div class="info-box">
+                            <h5>Stärken</h5>
+                            <ul>
+                                <li>Friedfertigkeit und Ruhe</li>
+                                <li>Empathie und Verständnis</li>
+                                <li>Vermittlungsfähigkeit</li>
+                                <li>Geduld und Akzeptanz</li>
+                            </ul>
+                        </div>
+                        <div class="info-box">
+                            <h5>Herausforderungen</h5>
+                            <ul>
+                                <li>Passivität und Trägheit</li>
+                                <li>Vermeidung von Konflikten</li>
+                                <li>Verlust der eigenen Prioritäten</li>
+                                <li>Sturheit (passive Aggression)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section id="quiz" class="quiz-section">
+        <div class="container">
+            <h2 class="section-title">Finde deinen Enneagram-Typ</h2>
+            <p class="section-description">Beantworte diese Fragen ehrlich, um mehr über deinen möglichen Typ zu erfahren</p>
+            
+            <div id="quiz-container" class="quiz-container">
+                <div id="quiz-question" class="quiz-question"></div>
+                <div id="quiz-options" class="quiz-options"></div>
+                <div class="quiz-navigation">
+                    <button id="prev-btn" class="quiz-btn" onclick="previousQuestion()" disabled>Zurück</button>
+                    <div id="progress-indicator" class="progress-indicator"></div>
+                    <button id="next-btn" class="quiz-btn" onclick="nextQuestion()">Weiter</button>
+                </div>
+            </div>
+            
+            <div id="quiz-result" class="quiz-result hidden">
+                <h3>Dein Ergebnis</h3>
+                <div id="result-content"></div>
+                <button class="cta-button" onclick="restartQuiz()">Quiz neu starten</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey Section -->
+    <section id="journey" class="journey-section">
+        <div class="container">
+            <h2 class="section-title">Deine persönliche Enneagram-Reise</h2>
+            
+            <div class="journey-content">
+                <div class="journey-card">
+                    <div class="journey-icon">🌱</div>
+                    <h3>Selbsterkenntnis</h3>
+                    <p>Der erste Schritt ist die Erkenntnis deines Typs und deiner Muster. Beobachte deine automatischen Reaktionen, Gedanken und Gefühle ohne Urteil.</p>
+                </div>
+                
+                <div class="journey-card">
+                    <div class="journey-icon">🔍</div>
+                    <h3>Tieferes Verständnis</h3>
+                    <p>Erforsche deine Grundmotivationen und Ängste. Verstehe, wie dein Typ in Stress- und Wachstumssituationen reagiert.</p>
+                </div>
+                
+                <div class="journey-card">
+                    <div class="journey-icon">💪</div>
+                    <h3>Bewusste Entwicklung</h3>
+                    <p>Nutze dein Wissen, um bewusstere Entscheidungen zu treffen. Arbeite an deinen Herausforderungen und kultiviere deine Stärken.</p>
+                </div>
+                
+                <div class="journey-card">
+                    <div class="journey-icon">🌟</div>
+                    <h3>Integration & Transformation</h3>
+                    <p>Integriere die positiven Aspekte aller Typen. Erreiche größere Freiheit von deinen automatischen Mustern und lebe authentischer.</p>
+                </div>
+            </div>
+
+            <div class="integration-section">
+                <h3>Die Ebenen der Entwicklung</h3>
+                <div class="levels-grid">
+                    <div class="level-card healthy">
+                        <h4>Gesunde Ebenen (1-3)</h4>
+                        <p>In den gesunden Ebenen lebt jeder Typ seine besten Qualitäten aus. Du bist authentisch, frei und in Balance mit deinen Stärken.</p>
+                    </div>
+                    <div class="level-card average">
+                        <h4>Durchschnittliche Ebenen (4-6)</h4>
+                        <p>Hier befinden sich die meisten Menschen. Du funktionierst gut, aber deine typischen Muster und Abwehrmechanismen sind aktiv.</p>
+                    </div>
+                    <div class="level-card unhealthy">
+                        <h4>Ungesunde Ebenen (7-9)</h4>
+                        <p>Unter Stress fallen wir in ungesunde Muster. Hier zeigen sich die negativen Aspekte und destruktiven Verhaltensweisen jedes Typs.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wings-section">
+                <h3>Flügel und Bewegungsrichtungen</h3>
+                <div class="wings-content">
+                    <div class="wings-explanation">
+                        <h4>Die Flügel</h4>
+                        <p>Jeder Typ wird von seinen beiden benachbarten Typen beeinflusst - den sogenannten "Flügeln". Diese verleihen deinem Haupttyp zusätzliche Nuancen und Facetten.</p>
+                        <p>Zum Beispiel: Typ 1 kann einen 9-Flügel (1w9) oder einen 2-Flügel (1w2) haben, was die Ausprägung des Typs beeinflusst.</p>
+                    </div>
+                    <div class="movement-explanation">
+                        <h4>Stress- und Wachstumsrichtungen</h4>
+                        <p>Jeder Typ bewegt sich unter Stress zu einem anderen Typ und in Wachstum zu einem weiteren Typ. Diese Verbindungen zeigen, wie wir uns unter verschiedenen Umständen verhalten.</p>
+                        <ul>
+                            <li>Typ 1 → Stress: 4, Wachstum: 7</li>
+                            <li>Typ 2 → Stress: 8, Wachstum: 4</li>
+                            <li>Typ 3 → Stress: 9, Wachstum: 6</li>
+                            <li>Typ 4 → Stress: 2, Wachstum: 1</li>
+                            <li>Typ 5 → Stress: 7, Wachstum: 8</li>
+                            <li>Typ 6 → Stress: 3, Wachstum: 9</li>
+                            <li>Typ 7 → Stress: 1, Wachstum: 5</li>
+                            <li>Typ 8 → Stress: 5, Wachstum: 2</li>
+                            <li>Typ 9 → Stress: 6, Wachstum: 3</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="centers-section">
+                <h3>Die drei Zentren der Intelligenz</h3>
+                <div class="centers-grid">
+                    <div class="center-card">
+                        <h4>Bauchzentrum (Typen 8, 9, 1)</h4>
+                        <p><strong>Emotion:</strong> Wut/Zorn</p>
+                        <p>Diese Typen reagieren instinktiv und körperlich. Sie haben Themen mit Grenzen, Kontrolle und Autonomie. Ihre Herausforderung ist es, ihre Wut konstruktiv zu kanalisieren.</p>
+                    </div>
+                    <div class="center-card">
+                        <h4>Herzzentrum (Typen 2, 3, 4)</h4>
+                        <p><strong>Emotion:</strong> Scham</p>
+                        <p>Diese Typen sind auf ihr Image und ihre Identität fokussiert. Sie haben Themen mit Selbstwert und Anerkennung. Ihre Herausforderung ist es, authentisch zu sein.</p>
+                    </div>
+                    <div class="center-card">
+                        <h4>Kopfzentrum (Typen 5, 6, 7)</h4>
+                        <p><strong>Emotion:</strong> Angst</p>
+                        <p>Diese Typen denken und planen viel. Sie haben Themen mit Sicherheit und Gewissheit. Ihre Herausforderung ist es, im gegenwärtigen Moment zu vertrauen.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="practices-section">
+                <h3>Praktiken für jedes Zentrum</h3>
+                <div class="practices-content">
+                    <div class="practice-card">
+                        <h4>Für das Bauchzentrum</h4>
+                        <ul>
+                            <li>Körperliche Achtsamkeit und Bewegung</li>
+                            <li>Bewusstes Wahrnehmen von Wut und Grenzen</li>
+                            <li>Erdungsübungen und Yoga</li>
+                            <li>Arbeit mit körperlichen Empfindungen</li>
+                        </ul>
+                    </div>
+                    <div class="practice-card">
+                        <h4>Für das Herzzentrum</h4>
+                        <ul>
+                            <li>Selbstmitgefühl entwickeln</li>
+                            <li>Authentische Gefühle ausdrücken</li>
+                            <li>Meditation über das wahre Selbst</li>
+                            <li>Tagebuch schreiben über Gefühle</li>
+                        </ul>
+                    </div>
+                    <div class="practice-card">
+                        <h4>Für das Kopfzentrum</h4>
+                        <ul>
+                            <li>Atemübungen zur Beruhigung des Geistes</li>
+                            <li>Präsenzübungen im Hier und Jetzt</li>
+                            <li>Vertrauen in die Unsicherheit entwickeln</li>
+                            <li>Meditation und Achtsamkeit</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Experience The Enneagram - Eine Reise zur Selbsterkenntnis</p>
+            <p class="footer-note">Das Enneagram ist ein Werkzeug zur Selbstentwicklung. Für tiefere Arbeit wird professionelle Begleitung empfohlen.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
