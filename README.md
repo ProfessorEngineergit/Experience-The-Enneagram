@@ -14,6 +14,6 @@ Im Browser `http://localhost:8080` öffnen. Einstiegspunkt ist `index.html`; die
 
 Experimentelle Informations- und Reflexionsseite. Der Fragebogen ist kein diagnostisches Verfahren; eine wissenschaftliche Validierung dieser konkreten Auswertung ist im Repository nicht dokumentiert.
 
-## Entwicklung und KI-Beteiligung
+## KI-Beteiligung
 
-Kleines, KI-gestützt entwickeltes Lern- oder Experimentierprojekt. Die Historie des Hauptbranches enthält ausdrücklich GitHub Copilot zugeschriebene Beiträge ([Beispiel](https://github.com/ProfessorEngineergit/Experience-The-Enneagram/commit/315d7b88e4de9d3a9248f1d2b984d21e8c5de755)). Das belegt KI-Beteiligung an diesen Beiträgen, nicht die Herkunft jeder Zeile oder eine unabhängige Prüfung. Bestehende Autor-, Co-Autoren- und Sitzungsangaben bleiben erhalten.
+Einzelne Code-Beiträge sind ausdrücklich KI-Tools zugeschrieben: [GitHub Copilot](https://github.com/ProfessorEngineergit/Experience-The-Enneagram/commit/7297e1143ccf1c7411e5ce2e62b2b7e9c7ae5540). Das gilt für diese Beiträge, nicht pauschal für alle Dateien.
